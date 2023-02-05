@@ -1,0 +1,10 @@
+img{
+    width: '120px';
+    cursor: pointer;
+    transition: all 0.2s; 
+}
+
+img:hover{
+    transition: all 0.2s;
+    opacity: 0.6;
+}

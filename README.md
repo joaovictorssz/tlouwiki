@@ -6,6 +6,8 @@ With the launch of the new series of The Last of Us on HBO, I decided to create 
 
 # Requirements
 - Node.js
+- You need to download the tlouwiki-api, and run it before you run this app.
+- The repository link: https://github.com/joaovictorssz/tlouwiki-api
 
 # Screenshots
 

@@ -20,11 +20,9 @@ export default function CharacterInfo(){
     return(
         <div id='characater_info-container'>
             <header id='head'>
-                <img width={'150px'} src={`${currentCharacter?.img}`} alt="character picture" />
                 <p>{currentCharacter?.name}</p>
             </header>
 
-            
             
             <div id='middle'>
                 <hr />
@@ -34,7 +32,6 @@ export default function CharacterInfo(){
                 <code><strong>Weight:</strong> {currentCharacter?.weight}kg</code>
                 <hr />       
             </div>
-
             
 
             <main id='bottom'>

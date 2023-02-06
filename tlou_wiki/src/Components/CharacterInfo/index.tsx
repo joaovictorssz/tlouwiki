@@ -2,12 +2,21 @@ import './styles.css'
 
 import {Character} from '../../types/Character'
 
-import {useContext} from 'react'
+import {useEffect, useContext} from 'react'
 import { CurrentCharacter } from '../../contexts/CurrentCharacter'
 
 
 export default function CharacterInfo(){
     const {currentCharacter} = useContext(CurrentCharacter)
+
+    useEffect(()=>{
+        let header = (document.getElementById("head") as HTMLDivElement)
+        header.style.setProperty('background', `url(${currentCharacter?.background})`)
+        header.style.setProperty('background-size', 'cover')
+        header.style.setProperty('background-repeat', 'no-repeat')
+        
+    }, [currentCharacter])
+    
     return(
         <div id='characater_info-container'>
             <header id='head'>

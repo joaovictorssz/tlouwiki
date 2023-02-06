@@ -21,6 +21,9 @@ hr{
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 

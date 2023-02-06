@@ -3,16 +3,11 @@ import './styles.css'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import CharacterItem from '../../Components/CharacterItem'
+import CharacterInfo from '../../Components/CharacterInfo'
 
-type DataType = {
-    name: string,
-    age: number,
-    gender: string,
-    height: number,
-    weight: number,
-    img: string,
-    description: string
-}
+import {Character} from '../../types/Character'
+
+import { CurrentCharacter } from '../../contexts/CurrentCharacter'
 
 export default function Wiki(){
 
@@ -24,8 +19,8 @@ export default function Wiki(){
     }, [])
 
 
-    const [data, setData] = useState<DataType[]>()
-
+    const [data, setData] = useState<Character[]>()
+    const [currentCharacter, setCurrentCharacter] = useState<Character>()
     useEffect(()=>{
         if(data && data?.length > 0){
             console.log(data)
@@ -33,17 +28,19 @@ export default function Wiki(){
     }, [data])
 
     return(
-        <div id="wiki-container">
-            
-            <section id='left'>
-                {data?.map((a: any, b: number)=>{
-                    return(<CharacterItem key={b} url={data[b].img}></CharacterItem>)
-                })}
-            </section>
-            <section id="right">
-                <p>Right hand</p>
-            </section>
+        <CurrentCharacter.Provider value={{data, currentCharacter, setCurrentCharacter}}>
+            <div id="wiki-container">
+                
+                <section id='left'>
+                    {data?.map((a: any, b: number)=>{
+                        return(<CharacterItem id={b} key={b} url={data[b].img}></CharacterItem>)
+                    })}
+                </section>
+                <section id="right">
+                    <CharacterInfo></CharacterInfo>
+                </section>
 
-        </div>
+            </div>
+        </CurrentCharacter.Provider>
     )
 }

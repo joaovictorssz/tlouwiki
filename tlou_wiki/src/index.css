@@ -6,7 +6,7 @@ body {
 
 }
 
-button, h3,  h4, h2, h1, p{
+button, h3,  h4, h2, h1, p, code{
   color: #fff;
   margin: 0;
 }

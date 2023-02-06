@@ -8,6 +8,14 @@
 #left{
     width: 50%;
     max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#left div{
+    width: max-content;
+    height: max-content;
     display: grid;
     grid-template-areas:
     'img img';
@@ -22,4 +30,54 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 1100px) {
+    #wiki-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #left{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #left div{
+        min-width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    #right{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:  700px){
+
+
+    #left{
+        display: flex;
+    }
+
+   #left div{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-row: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    flex: auto;
+
+
+   }
+
+   #left div img{
+    margin: 0;
+    padding: 0;
+   }
 }

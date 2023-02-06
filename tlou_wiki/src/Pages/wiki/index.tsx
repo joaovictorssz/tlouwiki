@@ -16,6 +16,9 @@ export default function Wiki(){
         .then((res)=>{
             setData(res.data)
         })
+        .catch((err)=>{
+            window.alert(`You may have to run the API - ${err}`)
+        })
     }, [])
 
 
@@ -32,9 +35,11 @@ export default function Wiki(){
             <div id="wiki-container">
                 
                 <section id='left'>
-                    {data?.map((a: any, b: number)=>{
+                    <div>
+                        {data?.map((a: any, b: number)=>{
                         return(<CharacterItem id={b} key={b} url={data[b].img}></CharacterItem>)
                     })}
+                    </div>
                 </section>
                 <section id="right">
                     <CharacterInfo></CharacterInfo>
